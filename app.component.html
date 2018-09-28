@@ -1,0 +1,21 @@
+<table ><th colspan="6">Employee Information</th>
+  <tr>
+    <td>ID</td>
+    <td>NAME</td>
+    <td>CONTACT</td>
+    <td>EMAIL</td>
+    <td>DOB</td>
+    <td>PERFORMANCE</td>
+    <td>SALARY</td>
+  </tr>
+  <tr *ngFor="let emp of employee">
+    <td>{{emp.id}}</td>
+    <td>{{emp.name | employee:emp.gender}}</td>
+    <td>{{emp.contact}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.dob | date}}</td>
+    <td>{{emp.performance | percent}}</td>
+    <td>{{emp.salary | currency:'EUR':number:'6.3-4'}}</td>
+
+  </tr>
+</table>
